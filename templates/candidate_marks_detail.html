@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Candidate Marks Detail{% endblock %}
+
+{% block content %}
+<h2>Candidate Marks Details</h2>
+<p><strong>Candidate:</strong> {{ candidate_marks.candidate.name }}</p>
+<p><strong>Course:</strong> {{ candidate_marks.course.name }}</p>
+<p><strong>Leg:</strong> {{ candidate_marks.leg.name }}</p>
+<p><strong>Subject:</strong> {{ candidate_marks.subject.name }}</p>
+<p><strong>Marks Obtained:</strong> {{ candidate_marks.marks_obtained }}</p>
+<a href="{% url 'candidate_marks_update' candidate_marks.pk %}" class="btn btn-warning">Edit</a>
+<a href="{% url 'candidate_marks_delete' candidate_marks.pk %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'candidate_marks_list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Candidate Marks{% endblock %}
+
+{% block content %}
+<h2>Candidate Marks List</h2>
+<a href="{% url 'candidate_marks_create' %}" class="btn btn-primary mb-3">Add New Candidate Marks</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Candidate</th>
+            <th>Course</th>
+            <th>Leg</th>
+            <th>Subject</th>
+            <th>Marks Obtained</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for marks in candidate_marks %}
+        <tr>
+            <td>{{ marks.candidate.name }}</td>
+            <td>{{ marks.course.name }}</td>
+            <td>{{ marks.leg.name }}</td>
+            <td>{{ marks.subject.name }}</td>
+            <td>{{ marks.marks_obtained }}</td>
+            <td>
+                <a href="{% url 'candidate_marks_detail' marks.pk %}" class="btn btn-info btn-sm">View</a>
+                <a href="{% url 'candidate_marks_update' marks.pk %}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{% url 'candidate_marks_delete' marks.pk %}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

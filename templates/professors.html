@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Management</title>
+    <!-- Link Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Optional: Custom styles for the page */
+        .container {
+            margin-top: 20px;
+        }
+
+        .schedule-table {
+            margin-top: 20px;
+        }
+
+        .dropdown-menu {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="my-4">Professor Management</h1>
+
+        <!-- Professor Selection Dropdown -->
+        <div class="dropdown mb-4">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                Select Professor
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#" data-professor="professor1">Dr. Alice Johnson</a></li>
+                <li><a class="dropdown-item" href="#" data-professor="professor2">Dr. Bob Smith</a></li>
+                <li><a class="dropdown-item" href="#" data-professor="professor3">Dr. Carol Davis</a></li>
+                <!-- Add more professors here -->
+            </ul>
+        </div>
+
+        <!-- Weekly Schedule Table -->
+        <div class="table-responsive schedule-table">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:00 - 09:00</td>
+                        <td>Math 101</td>
+                        <td></td>
+                        <td>Physics 201</td>
+                        <td></td>
+                        <td>Chemistry 301</td>
+                    </tr>
+                    <tr>
+                        <td>09:00 - 10:00</td>
+                        <td></td>
+                        <td>Biology 101</td>
+                        <td></td>
+                        <td>Math 202</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>10:00 - 11:00</td>
+                        <td>English 301</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>History 101</td>
+                    </tr>
+                    <!-- Add more time slots as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
+{% endblock %}

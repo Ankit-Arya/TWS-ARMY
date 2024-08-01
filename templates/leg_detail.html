@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Leg Detail{% endblock %}
+
+{% block content %}
+<h2>Leg Details</h2>
+<p><strong>Name:</strong> {{ leg.name }}</p>
+<p><strong>Course:</strong> {{ leg.course.name }}</p>
+<a href="{% url 'leg_update' leg.pk %}" class="btn btn-warning">Edit</a>
+<a href="{% url 'leg_delete' leg.pk %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'leg_list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}

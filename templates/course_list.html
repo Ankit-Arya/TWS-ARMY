@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Courses{% endblock %}
+
+{% block content %}
+<h2>Courses List</h2>
+<a href="{% url 'course_create' %}" class="btn btn-primary mb-3">Add New Course</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Version Number</th>
+            <th>Creation Date</th>
+            <th>Completion Status</th>
+            <th>Date From</th>
+            <th>Date To</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for course in courses %}
+        <tr>
+            <td>{{ course.name }}</td>
+            <td>{{ course.ver_no }}</td>
+            <td>{{ course.creation_date }}</td>
+            <td>{{ course.complition_status }}</td>
+            <td>{{ course.date_from }}</td>
+            <td>{{ course.date_to }}</td>
+            <td>
+                <a href="{% url 'course_detail' course.pk %}" class="btn btn-info btn-sm">View</a>
+                <a href="{% url 'course_update' course.pk %}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{% url 'course_delete' course.pk %}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

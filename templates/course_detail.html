@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Course Detail{% endblock %}
+
+{% block content %}
+<h2>Course Details</h2>
+<p><strong>Name:</strong> {{ course.name }}</p>
+<p><strong>Version Number:</strong> {{ course.ver_no }}</p>
+<p><strong>Creation Date:</strong> {{ course.creation_date }}</p>
+<p><strong>Completion Status:</strong> {{ course.complition_status }}</p>
+<p><strong>Date From:</strong> {{ course.date_from }}</p>
+<p><strong>Date To:</strong> {{ course.date_to }}</p>
+<a href="{% url 'course_update' course.pk %}" class="btn btn-warning">Edit</a>
+<a href="{% url 'course_delete' course.pk %}" class="btn btn-danger">Delete</a>
+<a href="{% url 'course_list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}

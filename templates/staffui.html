@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management Dashboard</title>
+    <!-- Link Bootstrap CSS -->
+    <style>
+        .container {
+            margin-top: 20px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="my-4">Staff Management Dashboard</h1>
+
+        <!-- Candidates Section -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Candidates</h5>
+            </div>
+            <div class="card-body">
+                <a href="{% url 'candidate_list' %}" class="btn btn-primary">View All Candidates</a>
+                <a href="{% url 'candidate_create' %}" class="btn btn-success">Add New Candidate</a>
+            </div>
+        </div>
+
+        <!-- Courses Section -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Courses</h5>
+            </div>
+            <div class="card-body">
+                <a href="{% url 'course_list' %}" class="btn btn-primary">View All Courses</a>
+                <a href="{% url 'course_create' %}" class="btn btn-success">Add New Course</a>
+            </div>
+        </div>
+
+        <!-- Legs Section -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Legs</h5>
+            </div>
+            <div class="card-body">
+                <a href="{% url 'leg_list' %}" class="btn btn-primary">View All Legs</a>
+                <a href="{% url 'leg_create' %}" class="btn btn-success">Add New Leg</a>
+            </div>
+        </div>
+
+        <!-- Subjects Section -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Subjects</h5>
+            </div>
+            <div class="card-body">
+                <a href="{% url 'subject_list' %}" class="btn btn-primary">View All Subjects</a>
+                <a href="{% url 'subject_create' %}" class="btn btn-success">Add New Subject</a>
+            </div>
+        </div>
+
+        <!-- Candidate Marks Section -->
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Candidate Marks</h5>
+            </div>
+            <div class="card-body">
+                <a href="{% url 'candidate_marks_list' %}" class="btn btn-primary">View All Candidate Marks</a>
+                <a href="{% url 'candidate_marks_create' %}" class="btn btn-success">Add New Candidate Marks</a>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
+
+{% endblock %}
